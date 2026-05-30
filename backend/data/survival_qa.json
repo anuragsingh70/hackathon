@@ -1,0 +1,254 @@
+[
+  {
+    "id": "lost_general",
+    "tags": ["lost", "navigation", "help", "emergency"],
+    "questions": ["i am lost", "what should i do if i am lost", "how do i survive if i am lost"],
+    "answer": [
+      "Stop, breathe, and avoid walking aimlessly.",
+      "If the area is safe, stay put so rescuers can search a smaller area.",
+      "Mark your location and only navigate if you are confident about the route.",
+      "Protect yourself with shelter, warmth, and water before spending energy on travel.",
+      "Signal for rescue with a whistle, smoke, bright fabric, or large ground markers."
+    ]
+  },
+  {
+    "id": "signal_help",
+    "tags": ["help", "signal", "rescue", "emergency"],
+    "questions": ["how do i signal for help", "how can i get rescued", "best survival signals"],
+    "answer": [
+      "Use clear repeated signals such as three whistle blasts, three fires, or three flashes.",
+      "Choose open ground where signals can be seen from far away.",
+      "Use bright fabric, reflective items, or large symbols on the ground.",
+      "If aircraft may pass overhead, wave slowly and deliberately instead of moving randomly.",
+      "Stay near shelter and water if the area is safe so rescuers can locate you more easily."
+    ]
+  },
+  {
+    "id": "find_water",
+    "tags": ["water", "hydration", "procurement"],
+    "questions": ["how do i find water", "where can i find water in the wild", "how to get drinking water"],
+    "answer": [
+      "Look in low ground, drainage lines, green vegetation, shaded depressions, and near animal trails.",
+      "Collect water early instead of waiting until you are desperate.",
+      "Move during cooler parts of the day to reduce water loss.",
+      "Carry and store safe water whenever you can.",
+      "Purify questionable water before drinking."
+    ]
+  },
+  {
+    "id": "purify_water",
+    "tags": ["water", "purify", "boil", "filter"],
+    "questions": ["how do i purify water", "can i drink river water", "how to make water safe"],
+    "answer": [
+      "Boiling is one of the safest field methods when you have the time and fuel.",
+      "Filtering removes particles, but you may still need purification depending on the filter.",
+      "Chemical treatment can help when used correctly and given enough contact time.",
+      "Choose the cleanest source you can before treating it.",
+      "If water may be contaminated, do not rely on appearance alone."
+    ]
+  },
+  {
+    "id": "build_fire",
+    "tags": ["fire", "warmth", "tinder", "kindling"],
+    "questions": ["how do i make a fire", "how to start a fire", "best way to build a survival fire"],
+    "answer": [
+      "Start with dry tinder, then add thin kindling before larger sticks.",
+      "Clear the fire site so the flame cannot spread.",
+      "Shelter the flame from wind but keep enough airflow for combustion.",
+      "Prepare extra fuel before striking the first spark.",
+      "Use fire for warmth, signaling, cooking, and boiling water."
+    ]
+  },
+  {
+    "id": "wet_fire",
+    "tags": ["fire", "rain", "wet"],
+    "questions": ["how do i make fire when everything is wet", "wet weather fire tips", "how to start fire in rain"],
+    "answer": [
+      "Look for dry inner wood by splitting sticks and branches.",
+      "Gather tinder from protected places such as under bark, inside dead standing wood, or from carried supplies.",
+      "Build a small dry platform to lift tinder off wet ground.",
+      "Use the driest material first and shield it from rain and wind while lighting.",
+      "Keep feeding the fire gradually so it can dry damp fuel as it grows."
+    ]
+  },
+  {
+    "id": "build_shelter",
+    "tags": ["shelter", "warmth", "camp"],
+    "questions": ["how do i build a shelter", "best emergency shelter", "how to stay dry outside"],
+    "answer": [
+      "Choose a site protected from wind, flooding, and falling branches.",
+      "Build shelter before dark and before you become cold, wet, or exhausted.",
+      "Keep the shelter small enough to hold warmth.",
+      "Use dry leaves, grass, or debris for insulation.",
+      "Prioritize dryness and wind protection before comfort."
+    ]
+  },
+  {
+    "id": "cold_survival",
+    "tags": ["cold", "hypothermia", "warmth", "shelter"],
+    "questions": ["how do i survive cold weather", "signs of hypothermia", "how to stay warm outside"],
+    "answer": [
+      "Get out of wind and wet clothing as quickly as possible.",
+      "Build shelter and insulation before your coordination drops.",
+      "Use dry layers, ground insulation, and controlled heat sources to preserve body temperature.",
+      "Eat and drink if you can do so safely because your body needs fuel to stay warm.",
+      "If someone becomes confused, clumsy, or very drowsy, suspect hypothermia and act fast."
+    ]
+  },
+  {
+    "id": "heat_survival",
+    "tags": ["heat", "sun", "dehydration", "water"],
+    "questions": ["how do i survive heat", "how to avoid dehydration", "what to do in extreme heat"],
+    "answer": [
+      "Slow down and avoid heavy work during the hottest part of the day.",
+      "Seek shade and cover exposed skin from direct sun.",
+      "Drink safe water steadily instead of waiting until you feel severely thirsty.",
+      "Watch for dizziness, confusion, headache, or cramps as warning signs.",
+      "Move more during cooler morning and evening hours."
+    ]
+  },
+  {
+    "id": "find_food",
+    "tags": ["food", "edible", "trap", "fish"],
+    "questions": ["how do i find food", "what can i eat in the wild", "how to get food in survival"],
+    "answer": [
+      "Do not burn large amounts of energy chasing food too early.",
+      "Favor low-risk sources such as fishing, trapping, and confidently identified edible plants.",
+      "Never eat unknown berries, mushrooms, or plants just because they look familiar.",
+      "Choose methods that return more calories than they cost.",
+      "Remember that shelter, fire, and water are usually more urgent than food in short-term survival."
+    ]
+  },
+  {
+    "id": "first_aid_bleeding",
+    "tags": ["injury", "bleeding", "first aid", "wound"],
+    "questions": ["how do i stop bleeding", "what should i do for a bleeding wound", "first aid for bleeding"],
+    "answer": [
+      "Apply firm direct pressure to the wound as soon as possible.",
+      "Use the cleanest dressing or cloth available.",
+      "Keep pressure steady and avoid lifting the dressing repeatedly to check too soon.",
+      "If bleeding is severe and does not stop, escalate your response and seek rescue quickly.",
+      "Treat for shock by keeping the person warm and as calm as possible."
+    ]
+  },
+  {
+    "id": "first_aid_fracture",
+    "tags": ["injury", "fracture", "broken bone", "first aid"],
+    "questions": ["what if i break a bone", "how to splint an injury", "first aid for fracture"],
+    "answer": [
+      "Keep the injured area as still as possible.",
+      "Immobilize the limb with a splint only if you can do it without causing more damage.",
+      "Pad the splint and secure it snugly but not so tight that circulation is cut off.",
+      "Do not force a badly deformed limb back into position.",
+      "Prioritize safe evacuation or rescue after stabilizing the injury."
+    ]
+  },
+  {
+    "id": "animal_encounter",
+    "tags": ["animal", "danger", "wildlife", "safety"],
+    "questions": ["what if i see a wild animal", "how to avoid animal attacks", "animal safety outdoors"],
+    "answer": [
+      "Stay calm and avoid sudden movements.",
+      "Do not corner the animal or move between it and its young.",
+      "Back away slowly while watching its behavior.",
+      "Protect food and scraps so you do not attract animals to camp.",
+      "Specific species require different responses, so avoid guessing if you are unsure."
+    ]
+  },
+  {
+    "id": "snake_bite",
+    "tags": ["snake", "bite", "injury", "emergency"],
+    "questions": ["what should i do if a snake bites me", "snake bite first aid", "how to treat snake bite"],
+    "answer": [
+      "Move away from the snake and keep the bitten person calm.",
+      "Limit movement so venom spreads more slowly.",
+      "Remove tight items like rings or bracelets before swelling increases.",
+      "Do not cut the wound, suck the venom, or apply ice unless qualified medical guidance says otherwise.",
+      "Seek urgent medical help as quickly as possible."
+    ]
+  },
+  {
+    "id": "night_survival",
+    "tags": ["night", "camp", "shelter", "fire"],
+    "questions": ["what should i do before nightfall", "how to survive one night outside", "night survival checklist"],
+    "answer": [
+      "Secure shelter before it gets dark.",
+      "Gather more firewood and insulation than you think you will need.",
+      "Organize water, tools, and light sources so you do not waste energy searching for them later.",
+      "Avoid unnecessary travel once visibility drops.",
+      "Set up signals or markers if rescue is possible."
+    ]
+  },
+  {
+    "id": "navigation_basics",
+    "tags": ["navigation", "compass", "direction", "lost"],
+    "questions": ["how do i navigate without getting lost", "basic survival navigation", "how to find direction outside"],
+    "answer": [
+      "Use obvious landmarks and keep track of direction before you need it urgently.",
+      "If you have a compass, take simple bearings and stick to them.",
+      "Mark your route so you can backtrack if needed.",
+      "Do not rely on one clue alone when choosing direction.",
+      "If you are already uncertain and the area is safe, stopping may be smarter than pushing on."
+    ]
+  },
+  {
+    "id": "rain_survival",
+    "tags": ["rain", "wet", "shelter", "cold"],
+    "questions": ["how do i survive heavy rain", "what to do if i am soaked outside", "rain shelter tips"],
+    "answer": [
+      "Get out of wind and rain quickly because heat loss accelerates when you are wet.",
+      "Create overhead cover first, even if it is temporary.",
+      "Insulate yourself from the ground because wet ground steals body heat.",
+      "Protect tinder and dry materials so you still have a chance to make fire.",
+      "Change into dry clothing if you have any."
+    ]
+  },
+  {
+    "id": "drink_unsafe_water",
+    "tags": ["water", "emergency", "dehydration"],
+    "questions": ["is it better to drink unsafe water or nothing", "water emergency decision", "dehydration vs dirty water"],
+    "answer": [
+      "This is a risk tradeoff, not a simple yes-or-no rule.",
+      "Severe dehydration can become life-threatening quickly, especially in heat.",
+      "If you can improve the water even a little by filtering, settling, or boiling, do that first.",
+      "Choose the cleanest source available instead of the first source you see.",
+      "When possible, prevent reaching this point by collecting and treating water early."
+    ]
+  },
+  {
+    "id": "camp_setup",
+    "tags": ["camp", "shelter", "fire", "safety"],
+    "questions": ["how should i set up camp", "best survival camp setup", "where should i camp"],
+    "answer": [
+      "Choose ground that is dry, safe, and protected from wind.",
+      "Avoid gullies, flood paths, dead branches overhead, and unstable slopes.",
+      "Place shelter, fire area, and gear so you can reach them easily at night.",
+      "Keep sanitation and waste away from your water source.",
+      "Think about warmth, drainage, and visibility before committing to the site."
+    ]
+  },
+  {
+    "id": "panic_control",
+    "tags": ["panic", "stress", "mindset", "lost"],
+    "questions": ["how do i stop panicking in survival", "what if i panic when lost", "stay calm outdoors"],
+    "answer": [
+      "Pause and slow your breathing before making the next decision.",
+      "Focus on the next useful action, not every problem at once.",
+      "Check the basics first: shelter, water, warmth, injuries, and signaling.",
+      "Avoid rapid decisions made from fear or frustration.",
+      "A calm simple plan usually beats a rushed complicated one."
+    ]
+  },
+  {
+    "id": "general_priorities",
+    "tags": ["priority", "survival", "basics", "emergency"],
+    "questions": ["what matters first in survival", "survival priorities", "what should i do first in an emergency outdoors"],
+    "answer": [
+      "Handle immediate threats such as injury, exposure, and unsafe surroundings first.",
+      "Then focus on shelter, warmth, water, and signaling based on the conditions.",
+      "Food usually comes after the more urgent basics.",
+      "Conserve energy and avoid choices that create new problems.",
+      "Make a simple plan and keep reassessing your condition and environment."
+    ]
+  }
+]

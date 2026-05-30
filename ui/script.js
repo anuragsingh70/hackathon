@@ -5,6 +5,61 @@ const historyList = document.getElementById("historyList");
 const mapCard = document.getElementById("mapCard");
 const statusIndicator = document.getElementById("statusIndicator");
 
+const BACKEND_URL = "http://127.0.0.1:8001/api";
+
+async function backendRequest(path, options = {}) {
+    const response = await fetch(`${BACKEND_URL}${path}`, {
+        headers: { "Content-Type": "application/json" },
+        ...options
+    });
+
+    if (!response.ok) {
+        throw new Error(`Backend request failed: ${response.status}`);
+    }
+
+    return response.json();
+}
+
+if (!window.pywebview) {
+    window.pywebview = {
+        api: {
+            chat: async message => {
+                const data = await backendRequest("/chat", {
+                    method: "POST",
+                    body: JSON.stringify({ message })
+                });
+                return data.response;
+            },
+            get_history: () => backendRequest("/history"),
+            clear_history: () => backendRequest("/clear-history", { method: "POST" }),
+            speak: async text => {
+                const data = await backendRequest("/speak", {
+                    method: "POST",
+                    body: JSON.stringify({ text })
+                });
+                return data.status || "ok";
+            },
+            voice_input: async () => {
+                const data = await backendRequest("/voice-input", { method: "POST" });
+                return data.text;
+            },
+            get_ip_location: () => backendRequest("/ip-location"),
+            set_voice: index => backendRequest("/set-voice", {
+                method: "POST",
+                body: JSON.stringify({ index })
+            }),
+            set_speed: speed => backendRequest("/set-speed", {
+                method: "POST",
+                body: JSON.stringify({ speed })
+            }),
+            set_volume: volume => backendRequest("/set-volume", {
+                method: "POST",
+                body: JSON.stringify({ volume })
+            })
+        }
+    };
+}
+
 let map;
 let marker;
 let voiceEnabled = true;
