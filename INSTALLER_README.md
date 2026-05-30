@@ -22,7 +22,7 @@ This guide covers building and deploying the professional Explorer AI installer 
 
 ### Method 1: Standard GUI Installation (Recommended)
 ```batch
-ExplorerAI-Setup-2.0.0-x64.exe
+ExplorerAI-Setup-2.0.0-x64.exe. 
 ```
 - Double-click the installer
 - Follow the on-screen wizard
