@@ -35,7 +35,7 @@
 ❌ No help menu
 ❌ No auto-backup
 ❌ No modal dialogs
-❌ Limited UI customization
+❌ Limited UI customization    
 ```
 
 ### **v2.0.0 (Today's - ENHANCED)**
@@ -632,7 +632,7 @@ v2.0.0 (Today's Upgrade):
   - System verification tools
   - Build automation
   - 15 new premium features
-  - 3 deployment methods
+  - 3 deployment methods  
   - Ready for Group Policy/SCCM/Intune
 
 RESULT:
