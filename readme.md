@@ -76,7 +76,7 @@ ExplorerAI-Setup-2.0.0-x64.exe (644 MB)
 **The application is 100% OFFLINE-READY**
 
 What this means:
-✅ No package downloads during installation
+✅ No package downloadss during installation
 ✅ No model downloads during first launch
 ✅ No dependency resolution needed
 ✅ Works on computers with NO internet connection
