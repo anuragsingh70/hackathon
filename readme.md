@@ -308,7 +308,7 @@ Everything you need is in the installer!
 ## 🚀 QUICK ANSWER
 
 **Q: Does it download dependencies?**
-**A: NO! Everything (Python, libraries, models, data) is pre-packaged in the 644 MB installer.**
+**A: NO! Everything  (Python, libraries, models, data) is pre-packaged in the 644 MB installer.**
 
 **Q: Does it need internet?**
 **A: NO! It works completely offline.**
