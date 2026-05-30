@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Explorer AI</title>
+<link rel="icon" type="image/png" href="app-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css">
+</head>
+<body>
+<div class="app-shell">
+    <aside class="sidebar">
+        <div class="sidebar-top">
+            <div class="brand-mark">
+                <img src="app-icon.png" alt="Explorer AI icon">
+                <div class="brand-copy">
+                    <strong>Explorer AI</strong>
+                    <span>Field-ready desktop guide</span>
+                </div>
+            </div>
+            <button class="icon-button" type="button" aria-label="Help and shortcuts" onclick="showHelp()">?</button>
+            <button class="primary-nav" type="button" onclick="newChat()" title="Ctrl+N">
+                <span class="primary-nav-icon">+</span>
+                <span>New chat</span>
+            </button>
+        </div>
+
+        <nav class="sidebar-links">
+            <button class="sidebar-link" type="button" onclick="toggleSearchPanel()">
+                <span>Search</span>
+                <small>Browse topics</small>
+            </button>
+            <button class="sidebar-link" type="button" onclick="showSettings()">
+                <span>Settings</span>
+                <small>Voice and app settings</small>
+            </button>
+            <button class="sidebar-link active" type="button" onclick="focusHistoryPanel()">
+                <span>History</span>
+                <small>Search past conversations</small>
+            </button>
+            <button class="sidebar-link" type="button" onclick="getLocation()">
+                <span>Find me</span>
+                <small>Open live location map</small>
+            </button>
+        </nav>
+
+        <section class="history-panel">
+            <div class="panel-heading">
+                <span>Recent chats</span>
+                <div class="panel-actions">
+                    <button class="ghost-button" type="button" onclick="toggleHistorySearch()" title="Search history">🔍</button>
+                    <button class="ghost-button" type="button" onclick="exportHistory()" title="Export conversations">↓</button>
+                    <button class="ghost-button" type="button" onclick="clearHistory()">✕</button>
+                </div>
+            </div>
+            <input type="text" id="historySearch" class="history-search-input" placeholder="Search conversations..." style="display: none;">
+            <div id="historyList" class="history-list"></div>
+        </section>
+
+        <section class="voice-panel">
+            <div class="panel-heading">
+                <span>Voice Settings</span>
+                <button class="ghost-button" type="button" onclick="testVoice()" title="Test voice">🔊</button>
+            </div>
+
+            <label class="field-label" for="voiceSelect">Voice</label>
+            <select id="voiceSelect" onchange="setVoice(this.value)" aria-label="Voice selection">
+                <option value="0">Male</option>
+                <option value="1" selected>Female</option>
+            </select>
+
+            <label class="field-label" for="speedRange">Speed: <span id="speedValue">165</span>%</label>
+            <input id="speedRange" type="range" min="100" max="250" value="165" onchange="setSpeed(this.value)" aria-label="Speech speed">
+
+            <label class="field-label" for="volumeRange">Volume: <span id="volumeValue">100</span>%</label>
+            <input id="volumeRange" type="range" min="0" max="1" step="0.1" value="1" onchange="setVolume(this.value)" aria-label="Speech volume">
+
+            <label class="toggle-row">
+                <input type="checkbox" id="voiceToggle" checked>
+                <span>Enable voice reply</span>
+            </label>
+
+            <label class="toggle-row">
+                <input type="checkbox" id="timestampToggle" checked>
+                <span>Show message timestamps</span>
+            </label>
+        </section>
+    </aside>
+
+    <main class="workspace">
+        <header class="topbar">
+            <div class="topbar-actions">
+                <button class="icon-button subtle" type="button" id="statusIndicator" aria-label="Connection status" title="Connected">●</button>
+            </div>
+            <div class="topbar-status">
+                <img src="app-icon.png" alt="" class="topbar-icon">
+                <span>Explorer AI desktop</span>
+                <span class="topbar-time" id="topbarTime"></span>
+            </div>
+        </header>
+
+        <section class="hero" id="hero">
+            <div class="plan-badge">Offline-ready survival assistant</div>
+            <h1>Good evening, explorer</h1>
+            <p>Ask for survival guidance, find your location, review previous chats, or use voice assistance.</p>
+            <div class="quick-topics">
+                <button class="topic-chip" onclick="insertPrompt('What matters first in survival?')">🎯 Priorities</button>
+                <button class="topic-chip" onclick="insertPrompt('How do I signal for help?')">🆘 Rescue</button>
+                <button class="topic-chip" onclick="insertPrompt('How do I build a shelter?')">🏠 Shelter</button>
+                <button class="topic-chip" onclick="insertPrompt('How do I find water?')">💧 Water</button>
+            </div>
+        </section>
+
+        <section id="chat" class="chat-stream"></section>
+
+        <section id="mapCard" class="map-card">
+            <div class="map-heading">
+                <span>Location</span>
+                <small>Your map opens here when location is requested.</small>
+                <button class="ghost-button" type="button" onclick="closeMap()" title="Close map">✕</button>
+            </div>
+            <div id="map"></div>
+        </section>
+
+        <section class="composer-wrap">
+            <div class="composer-card">
+                <textarea id="input" placeholder="Ask about fire, shelter, water, rescue, first aid, or anything survival-related..." aria-label="Message input"></textarea>
+                <div class="composer-footer">
+                    <button class="composer-icon" type="button" onclick="voice()" title="Voice Input (Ctrl+M)">🎤</button>
+                    <div class="composer-actions">
+                        <button class="capsule" type="button" onclick="insertPrompt('Fire')">🔥 Fire</button>
+                        <button class="capsule" type="button" onclick="insertPrompt('Water')">💧 Water</button>
+                        <button class="capsule" type="button" onclick="insertPrompt('First Aid')">🏥 Aid</button>
+                        <button class="send-button" type="button" onclick="send()" title="Send (Ctrl+Enter)">Send</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+</div>
+
+<!-- Modal Dialogs -->
+<div id="helpModal" class="modal" style="display: none;">
+    <div class="modal-content">
+        <div class="modal-header">
+            <h2>Help & Shortcuts</h2>
+            <button class="ghost-button" type="button" onclick="closeModal('helpModal')">✕</button>
+        </div>
+        <div class="modal-body">
+            <div class="shortcuts-grid">
+                <div class="shortcut-item"><kbd>Ctrl+N</kbd> <span>New chat</span></div>
+                <div class="shortcut-item"><kbd>Ctrl+M</kbd> <span>Voice input</span></div>
+                <div class="shortcut-item"><kbd>Ctrl+Enter</kbd> <span>Send message</span></div>
+                <div class="shortcut-item"><kbd>Ctrl+K</kbd> <span>Search history</span></div>
+                <div class="shortcut-item"><kbd>?</kbd> <span>This help dialog</span></div>
+                <div class="shortcut-item"><kbd>Shift+C</kbd> <span>Clear history</span></div>
+            </div>
+            <div class="help-text">
+                <p><strong>Tips:</strong></p>
+                <ul>
+                    <li>Hold Shift + Enter to add a new line without sending</li>
+                    <li>Click on messages to copy them</li>
+                    <li>Use "Find me" to get your current location</li>
+                    <li>Export conversations from the History menu</li>
+                    <li>Customize voice speed and pitch in Settings</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="settingsModal" class="modal" style="display: none;">
+    <div class="modal-content">
+        <div class="modal-header">
+            <h2>Settings</h2>
+            <button class="ghost-button" type="button" onclick="closeModal('settingsModal')">✕</button>
+        </div>
+        <div class="modal-body">
+            <div class="settings-group">
+                <h3>Appearance</h3>
+                <label class="toggle-row">
+                    <input type="checkbox" id="timestampToggleModal" checked>
+                    <span>Show message timestamps</span>
+                </label>
+                <label class="toggle-row">
+                    <input type="checkbox" id="compactModeToggle">
+                    <span>Compact message view</span>
+                </label>
+            </div>
+            <div class="settings-group">
+                <h3>Voice</h3>
+                <p class="small-text">Configure voice settings in the sidebar Voice panel.</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="exportModal" class="modal" style="display: none;">
+    <div class="modal-content">
+        <div class="modal-header">
+            <h2>Export Conversation</h2>
+            <button class="ghost-button" type="button" onclick="closeModal('exportModal')">✕</button>
+        </div>
+        <div class="modal-body">
+            <p>Choose export format:</p>
+            <button class="export-button" onclick="downloadConversation('txt')">📄 Plain Text</button>
+            <button class="export-button" onclick="downloadConversation('json')">📋 JSON</button>
+            <button class="export-button" onclick="downloadConversation('md')">📝 Markdown</button>
+        </div>
+    </div>
+</div>
+
+<script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+<script src="script.js"></script>
+</body>
+</html>

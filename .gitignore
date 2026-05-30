@@ -1,0 +1,39 @@
+# Python environments and caches
+.venv/
+venv/
+env/
+__pycache__/
+*.py[cod]
+*.pyo
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# Dependency downloads and packaged/vendor artifacts
+offline_packages/
+*.whl
+*.tar.gz
+node_modules/
+
+# Build and installer output
+build/
+dist/
+*.exe
+*.msi
+*.nsi
+*.spec
+_internal/
+
+# Local app/runtime data
+chat_history.json
+app-config.json
+*.log
+.env
+.env.*
+
+# IDE and OS files
+.vscode/
+.idea/
+*.swp
+Thumbs.db
+Desktop.ini

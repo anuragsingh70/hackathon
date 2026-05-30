@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" role="img" aria-label="Explorer AI icon">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#2a1c18"/>
+      <stop offset="100%" stop-color="#df7d54"/>
+    </linearGradient>
+  </defs>
+  <rect width="128" height="128" rx="28" fill="url(#bg)"/>
+  <circle cx="87" cy="32" r="16" fill="#ffd7a3" fill-opacity="0.9"/>
+  <path d="M12 101 40 58l19 22 22-32 35 53Z" fill="#2b1d18"/>
+  <path d="M18 110 49 63l18 20 20-28 23 55Z" fill="#4d3428"/>
+  <path d="M56 128 74 93c9-16 19-24 33-23 7 1 13 5 21 12v46Z" fill="#e3bc85" fill-opacity="0.95"/>
+  <circle cx="34" cy="35" r="15" fill="none" stroke="#fff4e4" stroke-width="4" stroke-opacity="0.85"/>
+  <path d="M34 18 38 35 34 42 30 35Z" fill="#fff4e4"/>
+  <path d="M34 52 38 35 34 28 30 35Z" fill="#2b1d18" fill-opacity="0.85"/>
+</svg>
