@@ -60,7 +60,7 @@ ExplorerAI-Setup-2.0.0-x64.exe /D=C:\CustomPath
 ### Prerequisites
 1. Install NSIS from https://nsis.sourceforge.io/
 2. Ensure ExplorerAI.exe is in the ExplorerAI folder
-3. Verify LICENSE.txt exists
+3. Verify LICENSE.txt exists   
 
 ### Using Batch Script (Windows CMD)
 ```batch
