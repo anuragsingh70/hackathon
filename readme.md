@@ -16,7 +16,7 @@ The installer contains ALL Python dependencies already compiled:
 - Voice processing libraries
 - Database drivers
 - Networking libraries
-- All required DLLs
+- All required DLLs    
 
 **Result**: No `pip install` or package downloads needed!
 
@@ -310,7 +310,7 @@ Everything you need is in the installer!
 **Q: Does it download dependencies?**
 **A: NO! Everything  (Python, libraries, models, data) is pre-packaged in the 644 MB installer.**
 
-**Q: Does it need internet?**
+**Q: Does it need internet?**     
 **A: NO! It works completely offline.**
 
 **Q: How fast is installation?**
