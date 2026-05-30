@@ -10,10 +10,10 @@ Start the backend from the project root:
 python backend\server.py
 ```
 
-In another terminal, start the UI:
+In another terminal, start the frontend:
 
 ```powershell
-python -m http.server 8000 -d ui
+python -m http.server 8000 -d frontend
 ```
 
 Then open:
@@ -22,12 +22,12 @@ Then open:
 http://localhost:8000
 ```
 
-The UI runs in a browser for layout/demo testing. Chat, history, and location fallback calls are connected to the local backend at `http://127.0.0.1:8001/api`. Desktop-only voice capture still requires the original `pywebview` app shell.
+The frontend runs in a browser for layout/demo testing. Chat, history, and location fallback calls are connected to the local backend at `http://127.0.0.1:8001/api`. Desktop-only voice capture still requires the original `pywebview` app shell.
 
 ## Project Layout
 
 ```text
-ui/
+frontend/
   index.html
   style.css
   script.js
