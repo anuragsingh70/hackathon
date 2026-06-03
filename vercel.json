@@ -1,0 +1,18 @@
+g{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "framework": null,
+  "buildCommand": null,
+  "installCommand": "echo \"No install required\"",
+  "outputDirectory": "frontend",
+  "rewrites": [
+    {
+      "source": "/api/(.*)",
+      "destination": "/api"
+    }
+  ],
+  "functions": {
+    "api/index.py": {
+      "excludeFiles": "{frontend/**,scripts/**,offline_packages/**,**/__pycache__/**,**/*.pyc,*.jpg,*.jpeg,*.png}"
+    }
+  }
+}

@@ -5,7 +5,9 @@ const historyList = document.getElementById("historyList");
 const mapCard = document.getElementById("mapCard");
 const statusIndicator = document.getElementById("statusIndicator");
 
-const BACKEND_URL = "http://127.0.0.1:8001/api";
+const BACKEND_URL = location.hostname === "localhost" || location.hostname === "127.0.0.1"
+    ? "http://127.0.0.1:8001/api"
+    : "/api";
 
 async function backendRequest(path, options = {}) {
     const response = await fetch(`${BACKEND_URL}${path}`, {
